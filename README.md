@@ -58,15 +58,7 @@ Build the code using Maven:
 mvn clean project
 ```
 
-### 3. **Move JAR File to Shared Folder**
-
-Move the generated JAR file to a shared folder for easy access:
-
-```bash
-mv target/WordCountUsingHadoop-0.0.1-SNAPSHOT.jar shared-folder/input/data/
-```
-
-### 4. **Copy JAR to Docker Container**
+### 3. **Copy JAR to Docker Container**
 
 Copy the JAR file to the Hadoop ResourceManager container:
 
@@ -115,7 +107,7 @@ hadoop fs -put ./input.txt /input/dataset
 Run your MapReduce job using the following command:
 
 ```bash
-hadoop jar /opt/hadoop-3.2.1/share/hadoop/mapreduce/<your-jar-file>.jar com.example.controller.Controller /input/dataset/input.txt /output
+hadoop jar /opt/hadoop-3.2.1/share/hadoop/mapreduce/WordCountUsingHadoop-0.0.1-SNAPSHOT.jar com.example.controller.Controller /input/dataset/input.txt /output
 ```
 
 ### 9. **View the Output**
